@@ -1,0 +1,38 @@
+# Pull Image for CentOS and download
+docker pull centos
+
+# Booting CentOS with Docker in the docker-tryout server named "docker-tryout"
+docker run -d -t --name docker-tryout centos
+
+# See the running docker container with container ID
+docker ps
+
+# In container CentOS
+docker exec -it docker-tryout bash
+
+# Popular Linux Distribuion alpine will get pulled
+docker pull alpine
+
+# Another Boot for Alpine with Docker in the docker-tryout server named "docker-alpine"
+docker run -d -t --name docker-alpine alpine
+
+# In container Alpine
+docker exec -it docker-alpine sh
+
+# Pull down someone else's image
+hub.docker.com
+docker pull [image]/[sub]:[tag]
+
+# Running the Image (Port 80 for the Website --> if the dependency is for the website use port 80)
+docker run -t -d -p 80:80 --name [server-name] [image]/[sub]:[tag]
+
+# Stopping one of the Image for the Docker
+docker stop docker-alpine
+
+# Starting one of the Image for the Docker
+docker start docker-alpine
+
+# Looking at the stats for the Docker
+docker stats
+
+Docker is used in the corporate with launching images and pulling since people can write their code and deploy them using docker or developers. There shouldn't be any reason to say that the application doesn't work since docker is based on container which everything is included along with it.
